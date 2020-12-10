@@ -1,0 +1,49 @@
+﻿dign;tumor;decade;percent
+malignant;Chondrosarcoma;1;2.31660
+malignant;Chondrosarcoma;2;2.0849
+malignant;Chondrosarcoma;3;10.1930
+malignant;Chondrosarcoma;4;19.9227
+malignant;Chondrosarcoma;5;18.9961
+malignant;Chondrosarcoma;6;17.8378
+malignant;Osteosarcoma;1;37.0656
+malignant;Osteosarcoma;2;62.5482
+malignant;Osteosarcoma;3;44.7104
+malignant;Osteosarcoma;4;23.1660
+malignant;Osteosarcoma;5;20.1544
+malignant;Osteosarcoma;6;13.2046
+malignant;Ewing Sarcoma;1;48.4169
+malignant;Ewing Sarcoma;2;22.9343
+malignant;Ewing Sarcoma;3;12.7413
+malignant;Ewing Sarcoma;4;4.16988
+malignant;Ewing Sarcoma;5;2.31660
+malignant;Ewing Sarcoma;6;0.92664
+malignant;Fibrosarcoma;1;1.3899
+malignant;Fibrosarcoma;2;2.7799
+malignant;Fibrosarcoma;3;8.1081
+malignant;Fibrosarcoma;4;13.8996
+malignant;Fibrosarcoma;5;6.2548
+malignant;Fibrosarcoma;6;6.2548
+benign;Osteochondroma;1;44.8598
+benign;Osteochondroma;2;51.8691
+benign;Osteochondroma;3;33.4112
+benign;Osteochondroma;4;32.0093
+benign;Osteochondroma;5;25.9345
+benign;Osteochondroma;6;27.8037
+benign;Chondroma;1;13.5514
+benign;Chondroma;2;6.54205
+benign;Chondroma;3;8.6448
+benign;Chondroma;4;14.4859
+benign;Chondroma;5;21.0280
+benign;Chondroma;6;17.9906
+benign;Osteoid osteoma;1;20.0934
+benign;Osteoid osteoma;2;15.4205
+benign;Osteoid osteoma;3;15.8878
+benign;Osteoid osteoma;4;8.1775
+benign;Osteoid osteoma;5;3.2710
+benign;Osteoid osteoma;6;4.2056
+benign;Giant cell tumor;1;2.1028
+benign;Giant cell tumor;2;6.5420
+benign;Giant cell tumor;3;29.6728
+benign;Giant cell tumor;4;33.8785
+benign;Giant cell tumor;5;25.9345
+benign;Giant cell tumor;6;21.0280

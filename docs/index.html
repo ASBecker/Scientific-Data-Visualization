@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Become a Data Visualization Ninja</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Anton S. Becker, M.D., Ph.D." />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link href="libs/anchor-sections/anchor-sections.css" rel="stylesheet" />
+    <script src="libs/anchor-sections/anchor-sections.js"></script>
+    <link href="libs/animate.css/animate.min.css" rel="stylesheet" />
+    <link href="libs/tile-view/tile-view.css" rel="stylesheet" />
+    <script src="libs/tile-view/tile-view.js"></script>
+    <link href="libs/xaringanExtra-extra-styles/xaringanExtra-extra-styles.css" rel="stylesheet" />
+    <script src="libs/clipboard/clipboard.min.js"></script>
+    <link href="libs/shareon/shareon.min.css" rel="stylesheet" />
+    <script src="libs/shareon/shareon.min.js"></script>
+    <link href="libs/xaringanExtra-shareagain/shareagain.css" rel="stylesheet" />
+    <script src="libs/xaringanExtra-shareagain/shareagain.js"></script>
+    <script src="libs/xaringanExtra_fit-screen/fit-screen.js"></script>
+    <link href="libs/tachyons/tachyons.min.css" rel="stylesheet" />
+    <link href="libs/panelset/panelset.css" rel="stylesheet" />
+    <script src="libs/panelset/panelset.js"></script>
+    <meta name="description" content="Data Visualization Basics for Radiology Fellows at MSKCC"/>
+    <meta name="generator" content="xaringan and remark.js"/>
+    <meta name="github-repo" content="ASBecker/MSKCC-fellow-lecture-dataviz"/>
+    <meta name="twitter:title" content="Data Visualization Basics for Radiology Fellows at MSKCC"/>
+    <meta name="twitter:description" content="Data Visualization Basics for Radiology Fellows at MSKCC"/>
+    <meta name="twitter:url" content="https://MSKCC-fellow-lecture-dataviz.netlify.app"/>
+    <meta name="twitter:image:src" content="https://MSKCC-fellow-lecture-dataviz.netlify.app/social-card.png"/>
+    <meta name="twitter:image:alt" content="Title slide of Data Visualization Basics for Radiology Fellows at MSKCC, presented by Anton Becker, MD, PhD"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:creator" content="@dr_becker"/>
+    <meta name="twitter:site" content="@dr_becker"/>
+    <meta property="og:title" content="Data Visualization Basics for Radiology Fellows at MSKCC"/>
+    <meta property="og:description" content="Data Visualization Basics for Radiology Fellows at MSKCC"/>
+    <meta property="og:url" content="https://MSKCC-fellow-lecture-dataviz.netlify.app"/>
+    <meta property="og:image" content="https://MSKCC-fellow-lecture-dataviz.netlify.app/social-card.png"/>
+    <meta property="og:image:alt" content="Title slide of Data Visualization Basics for Radiology Fellows at MSKCC, presented by Anton Becker, MD, PhD"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:locale" content="en_US"/>
+    <meta property="article:author" content="Anton Becker"/>
+    <script src="https://unpkg.com/leader-line@1.0.5/leader-line.min.js"></script>
+    <script src="nucl.js"></script>
+    <link rel="stylesheet" href="msk.css" type="text/css" />
+    <link rel="stylesheet" href="msk-fonts.css" type="text/css" />
+    <link rel="stylesheet" href="cols.css" type="text/css" />
+    <link rel="stylesheet" href="magic.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Become a Data Visualization Ninja
+## ⚔<br/>What the academic fellow needs to know
+### Anton S. Becker, M.D., Ph.D.
+### Department of Radiology
+### 2020/12/10 (updated: 2020-12-09)
+
+---
+
+
+
+
+class: inverse, center, middle
+
+# Why is data visualization important?
+
+---
+
+# Data visualization: An integral part of the Analysis
+
+
+
+- Let A and B = two datasets ("study populations")
+
+- Both have datapoints of *x* (e.g. patient age) and *y* (e.g. Serum Alkaline Phosphatase)
+
+- The properties of the datasets are as follows:
+
+
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; Set &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Mean X &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Mean Y &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Std. Dev. X &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Std. Dev. Y &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Pearson corr. x|y &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; A &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 54.26734 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 47.83955 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 16.76896 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 26.93027 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -0.0629611 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; B &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 54.26327 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 47.83225 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 16.76514 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 26.93540 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -0.0644719 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+
+- Are age and alkaline phosphatase the same in both populations A and B?
+
+---
+
+# Data visualization: An integral part of the Analysis
+
+- Are those two the same?
+
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; Set &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Mean X &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Mean Y &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Std. Dev. X &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Std. Dev. Y &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Pearson corr. x|y &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; A &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 54.26734 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 47.83955 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 16.76896 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 26.93027 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -0.0629611 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; B &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 54.26327 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 47.83225 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 16.76514 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 26.93540 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -0.0644719 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+
+&lt;img src="index_files/figure-html/unnamed-chunk-3-1.png" width="720" style="display: block; margin: auto;" /&gt;
+---
+
+# Data visualization: An integral part of the Analysis
+
+- What about C?
+
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; Set &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Mean X &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Mean Y &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Std. Dev. X &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Std. Dev. Y &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Pearson corr. x|y &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; A &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 54.26734 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 47.83955 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 16.76896 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 26.93027 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -0.0629611 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; B &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 54.26327 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 47.83225 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 16.76514 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 26.93540 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -0.0644719 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; C &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 54.26610 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 47.83472 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 16.76983 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 26.93974 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -0.0641284 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+--
+
+&lt;img src="index_files/figure-html/unnamed-chunk-5-1.png" width="720" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Data visualization: Tell the story of your research
+
+.pull-left[
+
+&lt;img src="index_files/figure-html/unnamed-chunk-6-1.png" width="576" /&gt;
+  .footnote[
+  Source: Sun et al., Cold-induced epigenetic programming of the sperm enhances brown adipose tissue activity in the offspring, [**Nature Medicine** volume 24, pages1372–1383(2018)](https://www.nature.com/articles/s41591-018-0102-y)
+  ]
+]
+
+--
+
+.pull-right[
+&lt;img src="index_files/figure-html/unnamed-chunk-7-1.png" width="468" /&gt;
+]
+--
+.pull-right[
+&lt;img src="index_files/figure-html/unnamed-chunk-8-1.png" width="468" style="display: block; margin: auto;" /&gt;
+]
+
+---
+
+# Data visualization: Tell the story of your research
+
+.pull-left[
+&lt;img src="index_files/figure-html/unnamed-chunk-9-1.png" width="468" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-10-1.png" width="468" style="display: block; margin: auto;" /&gt;
+]
+.pull-right[
+&lt;img src="index_files/figure-html/unnamed-chunk-11-1.png" width="468" style="display: block; margin: auto 0 auto auto;" /&gt;
+]
+.footnote[
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;
+  Source: Sun et al., Cold-induced epigenetic programming of the sperm enhances brown adipose tissue activity in the offspring, [**Nature Medicine** volume 24, pages1372–1383(2018)](https://www.nature.com/articles/s41591-018-0102-y)
+]
+---
+
+# Why Data Visualization?
+
+## ⭐ Important data analysis and exploration tool
+
+- Tells you properties about your data that may be hidden by standard summary metrics
+
+## ⭐ Tell the story of your research
+
+- When writing a paper: Start with the figures, then write the text around the figures
+
+---
+
+background-image: url("img/delaunay_circulaires.png")
+background-size: cover
+class: center, bottom, inverse
+
+## Different Plot Types
+
+#### Robert Delaunay; Formes circulaires, Soleil et Lune (1912/1931)
+##### Kunsthaus Zürich
+
+---
+
+# Case study: Barchart
+
+&lt;img src="img/bone_tumors_0.png", alt="Bone tumor incidence over life decades from Freyschmidt (2010), p.12", style="width:500px; display:block; margin-left: auto; margin-right: auto;
+"&gt;
+
+---
+class: animated fadeIn
+
+# Case study: Barchart
+
+&lt;img src="img/bone_tumors_1.png", alt="Bone tumor incidence over life decades from Freyschmidt (2010), p.12", style="width:500px; display:block;  margin-left: auto; margin-right: auto;
+"&gt;
+
+---
+class: animated rollIn
+
+# Case study: Barchart
+
+&lt;img src="img/bone_tumors_2.png", alt="Bone tumor incidence over life decades from Freyschmidt (2010), p.12", style="width:500px; display:block;  margin-left: auto; margin-right: auto;
+"&gt;
+
+---
+class: animated slideIn
+
+# Case study: Barchart
+
+&lt;img src="index_files/figure-html/unnamed-chunk-12-1.png" width="648" style="display: block; margin: auto;" /&gt;
+
+---
+class: animated fadeIn
+
+# Case study: ~~Bar~~Point chart
+
+&lt;img src="index_files/figure-html/unnamed-chunk-13-1.png" width="648" style="display: block; margin: auto;" /&gt;
+---
+class: animated fadeIn
+
+# Case study: ~~Bar~~Point chart
+
+&lt;img src="index_files/figure-html/unnamed-chunk-14-1.png" width="648" style="display: block; margin: auto;" /&gt;
+---
+class: animated fadeIn
+
+# Case study: Point-and-line chart
+
+&lt;img src="index_files/figure-html/unnamed-chunk-15-1.png" width="648" style="display: block; margin: auto;" /&gt;
+---
+class: animated fadeIn
+
+# Case study: Area chart
+
+&lt;img src="index_files/figure-html/unnamed-chunk-16-1.png" width="648" style="display: block; margin: auto;" /&gt;
+---
+class: animated fadeIn
+
+# Case study: Area chart
+
+&lt;img src="index_files/figure-html/unnamed-chunk-17-1.png" width="648" style="display: block; margin: auto;" /&gt;
+---
+class: animated fadeIn
+
+# Case study: Area chart
+
+&lt;img src="index_files/figure-html/unnamed-chunk-18-1.png" width="648" style="display: block; margin: auto;" /&gt;
+---
+
+# Case study: Bar &amp;rarr; Area chart
+.pull-left.z-0[
+&lt;img src="img/bone_tumors_0.png" width="500" /&gt;
+]
+.pull-right.z-0[
+&lt;img src="index_files/figure-html/unnamed-chunk-20-1.png" width="576" /&gt;
+]
+
+--
+
+&lt;div style="position: absolute; top: 200px; z-index: 2; width:400px; margin-left:-600px; left:50%;"&gt;
+.bubble.thought.vanishIn[
+&amp;rarr; Remove clutter &lt;br /&gt;
+&amp;rarr; Get the right graph for your story&lt;br /&gt;
+&amp;rarr; Make it self-explanatory
+]
+&lt;div style="position: absolute; top: 250px; z-index: 2; margin-left:280px; left:50%; font-size: 250%;"&gt;
+&amp;#x1f4a1;
+&lt;/div&gt;
+&lt;/div&gt;
+
+---
+
+# Overview: Plot Types
+
+![:col_row Histogram, Scatter plot, Boxplot, Line chart]
+![:col_list One numeric, Two Numeric, Numeric/Categorical, Numeric/Ordinal]
+
+&lt;img src="index_files/figure-html/unnamed-chunk-21-1.png" width="216" /&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;
+&lt;img src="index_files/figure-html/unnamed-chunk-22-1.png" width="216" /&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;
+&lt;img src="index_files/figure-html/unnamed-chunk-23-1.png" width="216" /&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;
+&lt;img src="index_files/figure-html/unnamed-chunk-24-1.png" width="216" /&gt;
+--
+
+![:col_row Density plot, Scatter with marginal plot, Violin plot, Area plots]
+
+&lt;img src="index_files/figure-html/unnamed-chunk-25-1.png" width="216" /&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;
+&lt;img src="index_files/figure-html/unnamed-chunk-26-1.png" width="216" /&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;
+&lt;img src="index_files/figure-html/unnamed-chunk-27-1.png" width="216" /&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;
+&lt;img src="index_files/figure-html/unnamed-chunk-28-1.png" width="288" /&gt;
+
+---
+
+# Overview: Plot Types
+
+&lt;iframe src="https://www.data-to-viz.com/#explore" width="100%" height="500px" frameBorder="0"&gt;![Screenshot of interactive graph on data-to-viz.com](img/data-to-viz.png)&lt;/iframe&gt;
+
+.footnote[
+Interactive graph on [data-to-viz.com](https://www.data-to-viz.com/)
+]
+
+---
+background-image: url(img/map_engelberg.png)
+background-size: cover
+class: inverse, bottom, center
+
+&lt;h2 style="color: black; text-shadow: 2px 2px 8px #FFFFFF;"&gt;Colors and other elements&lt;/h2&gt;
+
+---
+
+class: animated, fadeIn
+
+# Color
+
+.pa4.z-0[
+.ml0.mt0.pl4.black-90.bl.bw2.b--blue[
+.f3.f4-m.f3-l.lh-copy.measure.mt0[
+To paint well is simple: Put the right color at the right place
+]
+.center.f6.ttu.tracked.fs-normal[
+Paul Klee
+]]]
+
+- Label: Color is a .leader-end-1[noun]
+
+- Measure: Color is a .leader-end-2[dimension]
+
+- Represent reality: Color is a .leader-end-3[representation]
+
+- Decorate: Color is an .leader-end-4[accessory]
+
+
+--
+
+.leader-start-1.right.z-2[
+&lt;img src="index_files/figure-html/unnamed-chunk-29-1.png" width="288" /&gt;
+]
+---
+
+class: animated, fadeIn
+
+# Color
+
+.pa4.z-0[
+.ml0.mt0.pl4.black-90.bl.bw2.b--blue[
+.f3.f4-m.f3-l.lh-copy.measure.mt0[
+To paint well is simple: Put the right color at the right place
+]
+.center.f6.ttu.tracked.fs-normal[
+Paul Klee
+]]]
+
+- Label: Color is a .leader-end-1[noun]
+
+- Measure: Color is a .leader-end-2[dimension]
+
+- Represent reality: Color is a .leader-end-3[representation]
+
+- Decorate: Color is an .leader-end-4[accessory]
+
+.leader-start-2.right[
+&lt;img src="index_files/figure-html/unnamed-chunk-30-1.png" width="288" /&gt;
+]
+
+--
+
+.leader-start-4[&amp;nbsp;]
+
+---
+
+class: animated, fadeIn
+
+# Color
+
+.pa4.z-0[
+.ml0.mt0.pl4.black-90.bl.bw2.b--blue[
+.f3.f4-m.f3-l.lh-copy.measure.mt0[
+To paint well is simple: Put the right color at the right place
+]
+.center.f6.ttu.tracked.fs-normal[
+Paul Klee
+]]]
+
+- Label: Color is a .leader-end-1[noun]
+
+- Measure: Color is a .leader-end-2[dimension]
+
+- Represent reality: Color is a .leader-end-3[representation]
+
+- Decorate: Color is an .leader-end-4[accessory]
+
+.leader-start-3.right[
+&lt;img src="img/map_engelberg.png" style = "fig.width='240px'; fig.height='165px'"&gt;
+]
+
+---
+
+<style>.panelset{--panel-tab-active-foreground: #000000;--panel-tab-hover-foreground: #4584DB;--panel-tab-font-family: helvetica;}</style>
+# Pitfalls
+
+.panelset[
+.panel[.panel-name[Too many colors and shapes]
+.pull-left[
+- Don't use too many colors, point shapes, 3D etc.
+
+- Split up overloaded graphs into subfigures
+
+- Do use a colorblind-friendly palette&lt;sup&gt;1&lt;/sup&gt;
+
+  .footnote[
+  &lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;
+  [1] You can use the online tools [colorbrewer2.org](https://colorbrewer2.org/) or [coolors.co](https://coolors.co/generate)
+  ]
+&lt;img src="index_files/figure-html/unnamed-chunk-32-1.png" width="504" /&gt;
+
+]
+.pull-right[
+![Stackoverflow screenshot on how to recreate abhorrent 3D chart](img/stackoverflow_q.jpg)
+]
+]
+
+.panel[.panel-name[Broken or multi-scales]
+
+- Don't use broken scales or superimposed plots: Hard to read and distorts reality of data
+- More mistakes when interpreting the data&lt;sup&gt;1&lt;/sup&gt;
+- If needed, use cut-out or lens technique instead:
+
+.footnote[
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;
+[Figure adapted from] Deipolyi AR, et al. Gender Disparity in Industry Relationships With Academic Interventional Radiology Physicians. &lt;br /&gt;&lt;br /&gt;
+[American Journal of Roentgenology. 2020 Apr 29:1-8](https://www.ajronline.org/doi/abs/10.2214/AJR.19.22176). &lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;
+[1] Isenberg P, et al. A study on Dual-Scale data charts. [IEEE Trans Vis Comput Graph. 2011 Dec;17(12):2469–78](https://doi.org/10.1109/TVCG.2011.160).
+]
+
+&lt;img src="index_files/figure-html/unnamed-chunk-33-1.png" width="432" /&gt;
+&lt;img src="img/genderIR_axis_bracket.png" width="80" height="300" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-35-1.png" width="504" /&gt;
+]
+
+.panel[.panel-name[Pie Charts]
+
+- **Do not use pie charts**
+- Information always better depicted in other charts (e.g. bar or boxplot) or a table
+- Example: Malignant bone tumors in the 4&lt;sup&gt;th&lt;/sup&gt; decade of life
+
+&lt;img src="index_files/figure-html/unnamed-chunk-36-1.png" width="504" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-37-1.png" width="504" /&gt;
+]
+]
+
+---
+
+# Other elements
+
+.pull-left[
+- Qualitative
+
+  - Shapes &amp;nbsp; ![ggplot2 points](img/pch.png)
+
+  - Linetypes &amp;nbsp; ![ggplot2 lines](img/lty.png)
+  
+- Quantitative
+
+  - Length &amp;nbsp; ![ggplot2 points](img/len.png)
+  
+  - Area size &amp;nbsp; ![ggplot2 points](img/area.png)
+  
+  - Tilt/angle &amp;nbsp; ![ggplot2 points](img/tilt.png)
+  
+  - Color saturation &amp;nbsp; ![ggplot2 points](img/sat.png)
+]
+
+--
+
+.pull-right[
+&lt;img src="index_files/figure-html/unnamed-chunk-38-1.png" width="432" /&gt;
+]
+---
+class: animated, fadeIn
+
+# Other elements
+
+.pull-left.pa4.z-0[
+.ml0.mt0.pl4.black-90.bl.bw2.b--blue[
+.f3.f4-m.f3-l.lh-copy.measure.mt0[
+Information consists of differences that make a difference
+]
+.center.f6.ttu.tracked.fs-normal[
+Gregory Bateson
+]]]
+
+.pull-right[
+&lt;img src="index_files/figure-html/unnamed-chunk-39-1.png" width="432" /&gt;
+]
+
+---
+
+# Further reading
+
+- Munzner, Tamara. *Visualization analysis and design*. CRC press, 2014.
+
+- Tufte, Edward R., and Peter R. Graves-Morris. *The visual display of quantitative information*. Vol. 2, no. 9. Cheshire, CT: Graphics press, 1983.
+
+- Wickham, Hadley. *ggplot2: elegant graphics for data analysis*. Springer, 2016.
+
+- Scherer, Cédric. [Up-to-date ggplot2 tutorial](https://cedricscherer.netlify.app/2019/08/05/a-ggplot2-tutorial-for-beautiful-plotting-in-r/)
+
+- &lt;svg style="height:0.8em;top:.04em;position:relative;fill:#4584DB;" viewBox="0 0 512 512"&gt;&lt;path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/&gt;&lt;/svg&gt; [@W_R_Chase](https://twitter.com/W_R_Chase) [@EdwardTufte](https://twitter.com/EdwardTufte) 
+
+- &lt;svg xmlns="http://www.w3.org/2000/svg" style="height:0.8em;top:.04em;position:relative;" viewBox="-4.771 0.104 53.521 44.858"&gt;&lt;path fill="#FFF" d="M29.909 35.89c-1.999 1.997-5.218 2.382-7.921 2.382-2.7 0-5.922-.385-7.918-2.382M36.021 4.276L25.899 1.894l-3.93 11.996L25.9 1.894m18.241 3.201a3.99 3.99 0 1 1-7.98 0 3.991 3.991 0 0 1 7.98 0zm.661 23.906c0 8.262-10.263 14.961-22.922 14.961-12.66 0-22.922-6.698-22.922-14.961 0-8.262 10.262-14.961 22.922-14.961 12.659 0 22.922 6.698 22.922 14.961zM-.744 26.676a5.061 5.061 0 0 1-3.027-4.636 5.06 5.06 0 0 1 8.935-3.257m33.568.103a5.061 5.061 0 0 1 9.018 3.154 5.064 5.064 0 0 1-3.23 4.72"/&gt;&lt;path d="M21.879 44.963c-13.191 0-23.922-7.16-23.922-15.961 0-.608.051-1.21.151-1.801a6.066 6.066 0 0 1-2.879-5.161 6.068 6.068 0 0 1 6.06-6.061c1.493 0 2.916.546 4.017 1.522 4.149-2.663 9.73-4.339 15.887-4.455L25.235.71l.882.208.021.005 9.421 2.218A5 5 0 0 1 40.151.105a4.996 4.996 0 0 1 4.99 4.991 4.996 4.996 0 0 1-4.99 4.99 4.995 4.995 0 0 1-4.99-4.984l-8.596-2.024-3.273 9.99c5.933.231 11.291 1.912 15.291 4.517a6.028 6.028 0 0 1 4.108-1.605 6.068 6.068 0 0 1 6.061 6.061 6.019 6.019 0 0 1-3.08 5.28c.087.553.132 1.113.132 1.681-.002 8.801-10.734 15.961-23.925 15.961zM.157 27.11a9.05 9.05 0 0 0-.2 1.892c0 7.699 9.834 13.961 21.922 13.961 12.088 0 21.922-6.263 21.922-13.961 0-.612-.062-1.215-.183-1.807a1.003 1.003 0 0 1-.099-.435c-.669-2.627-2.494-5.012-5.13-6.934a.992.992 0 0 1-.429-.304c-4.007-2.755-9.732-4.482-16.081-4.482-6.285 0-11.961 1.693-15.962 4.401a1.022 1.022 0 0 1-.401.279C2.823 21.643.951 24.044.256 26.694a.992.992 0 0 1-.084.384c-.005.011-.009.022-.015.032zm40.097-8.319c2.319 1.855 4.021 4.064 4.891 6.488a4.033 4.033 0 0 0 1.605-3.239 4.065 4.065 0 0 0-4.061-4.061 4.04 4.04 0 0 0-2.435.812zm-38.965-.812a4.065 4.065 0 0 0-4.06 4.061c0 1.213.54 2.34 1.436 3.1.899-2.405 2.618-4.596 4.946-6.433a4.066 4.066 0 0 0-2.322-.728zM40.15 2.104c-1.648 0-2.99 1.342-2.99 2.991s1.342 2.99 2.99 2.99 2.99-1.341 2.99-2.99-1.341-2.991-2.99-2.991zM21.988 39.271c-4.005 0-6.827-.875-8.626-2.675a1 1 0 0 1 1.415-1.414c1.405 1.405 3.763 2.089 7.211 2.089 3.447 0 5.807-.684 7.214-2.089a.999.999 0 1 1 1.413 1.414c-1.801 1.8-4.622 2.675-8.627 2.675z"/&gt;&lt;path fill="#FF4500" d="M30.097 22.35c-2.038 0-3.749 1.707-3.749 3.745 0 2.037 1.711 3.688 3.749 3.688s3.688-1.651 3.688-3.688c0-2.038-1.651-3.745-3.688-3.745zm-16.158 0c-2.036 0-3.745 1.709-3.745 3.745s1.708 3.688 3.745 3.688 3.688-1.652 3.688-3.688-1.652-3.745-3.688-3.745z"/&gt;&lt;/svg&gt; &lt;https://www.reddit.com/r/dataisbeautiful/&gt;
+
+---
+
+class: center, middle
+
+# Thanks!
+
+[&lt;svg style="height:0.8em;top:.04em;position:relative;fill:#4584DB;" viewBox="0 0 512 512"&gt;&lt;path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/&gt;&lt;/svg&gt;@dr_becker](https://twitter.com/dr_becker) / [beckera1@mskcc.org](mailto:beckera1@mskcc.org)
+
+Slides created via the R package [**xaringan**](https://github.com/yihui/xaringan).
+
+Also powered by [remark.js](https://remarkjs.com), [knitr](http://yihui.org/knitr), [R Markdown](https://rmarkdown.rstudio.com) and [xaringanExtra](https://github.com/gadenbuie/xaringanExtra).
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script src="cols_macro.js"></script>
+<script>var slideshow = remark.create({
+"ratio": "16:9",
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

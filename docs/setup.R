@@ -1,0 +1,40 @@
+options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(
+  fig.retina= 3,
+  cache = FALSE,
+  echo = TRUE,
+  message = FALSE, 
+  warning = FALSE
+)
+
+twitter <- '<svg style="height:0.8em;top:.04em;position:relative;fill:#4584DB;" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>'
+
+library(metathis)
+
+htmltools::tagList(
+  xaringanExtra::use_animate_css(TRUE, xaringan = FALSE),
+  xaringanExtra::use_tile_view(),
+  xaringanExtra::use_extra_styles(hover_code_line = TRUE, mute_unhighlighted_code = TRUE),
+  xaringanExtra::use_share_again(),
+  xaringanExtra::use_fit_screen(),
+  xaringanExtra::use_tachyons(),
+  xaringanExtra::use_panelset(),
+  meta() %>%
+    meta_general(
+      description = "Data Visualization Basics for Radiology Fellows at MSKCC",
+      generator = "xaringan and remark.js"
+    ) %>% 
+    meta_name("github-repo" = "ASBecker/MSKCC-fellow-lecture-dataviz") %>% 
+    meta_social(
+      title = "Data Visualization Basics for Radiology Fellows at MSKCC",
+      url = "https://MSKCC-fellow-lecture-dataviz.netlify.app",
+      image = "https://MSKCC-fellow-lecture-dataviz.netlify.app/social-card.png",
+      image_alt = "Title slide of Data Visualization Basics for Radiology Fellows at MSKCC, presented by Anton Becker, MD, PhD",
+      og_type = "website",
+      og_author = "Anton Becker",
+      twitter_card_type = "summary_large_image",
+      twitter_creator = "@dr_becker",
+      twitter_site = "@dr_becker"
+    ) %>% 
+    include_meta()
+)
