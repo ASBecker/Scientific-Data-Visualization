@@ -24,11 +24,11 @@ htmltools::tagList(
       description = "Data Visualization Basics for Radiology Fellows at MSKCC",
       generator = "xaringan and remark.js"
     ) %>% 
-    meta_name("github-repo" = "ASBecker/MSKCC-fellow-lecture-dataviz") %>% 
+    meta_name("github-repo" = "ASBecker/Scientific-Data-Visualization") %>% 
     meta_social(
       title = "Data Visualization Basics for Radiology Fellows at MSKCC",
-      url = "https://MSKCC-fellow-lecture-dataviz.netlify.app",
-      image = "https://MSKCC-fellow-lecture-dataviz.netlify.app/social-card.png",
+      url = "https://asbecker.github.io/Scientific-Data-Visualization/",
+      image = "https://asbecker.github.io/Scientific-Data-Visualization/social-card.png",
       image_alt = "Title slide of Data Visualization Basics for Radiology Fellows at MSKCC, presented by Anton Becker, MD, PhD",
       og_type = "website",
       og_author = "Anton Becker",
