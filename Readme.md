@@ -2,15 +2,16 @@
 
 ![](https://raw.githubusercontent.com/ASBecker/Scientific-Data-Visualization/main/docs/social-card.png)
 
-### What the academic fellow needs to know
+### What the academic fellow or resident needs to know
 
 [slides]: https://asbecker.github.io/Scientific-Data-Visualization/
 [mskcc]: https://www.mskcc.org/hcp-education-training/fellowships/oncologic-imaging-fellowship
+[wcmc]: https://radiology.weill.cornell.edu/education/residencies/diagnostic-radiology-and-integrated-irdr/resident-profiles
 [colors]: https://colorbrewer2.org/
 
 Anton Becker, M.D., Ph.D.
 
-This is a 20-minute lecture for radiology fellows at [MSKCC][mskcc].
+This is a lecture for [MSKCC][mskcc] radiology fellows and [WCMC][wcmc] residents.
 
 &#x1F4FA; [View slides][slides] (best viewed in Firefox or Chrome)
 
@@ -21,10 +22,12 @@ This is a 20-minute lecture for radiology fellows at [MSKCC][mskcc].
 
 &#x1F4CA; Beautiful figures efficiently tell the story of your research. Most people only ever look at the figures of your papers, for the others it's the first thing they look at.
 
+&#128736;&#65039; Select the right chart for the right data.
+
 &#x1F9EA; Reduce. Refine. And make it self-explanatory.
 
-&#128736;&#65039; Select the right tool for the right job.
+&#128100; Know your audience.
 
 &#x1f967; Don't use pie charts.
 
-&#x1F308; Don't overdo colors and use [colorblind-friendly palettes][colors]. 
+&#x1F308; Use few colors and use [colorblind-friendly palettes][colors]. 

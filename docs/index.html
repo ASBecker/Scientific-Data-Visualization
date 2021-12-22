@@ -5,8 +5,6 @@
     <meta charset="utf-8" />
     <meta name="author" content="Anton S. Becker, M.D., Ph.D." />
     <script src="libs/header-attrs/header-attrs.js"></script>
-    <link href="libs/anchor-sections/anchor-sections.css" rel="stylesheet" />
-    <script src="libs/anchor-sections/anchor-sections.js"></script>
     <link href="libs/animate.css/animate.min.css" rel="stylesheet" />
     <link href="libs/tile-view/tile-view.css" rel="stylesheet" />
     <script src="libs/tile-view/tile-view.js"></script>
@@ -22,7 +20,7 @@
     <script src="libs/panelset/panelset.js"></script>
     <meta name="description" content="Data Visualization Basics for Radiology Fellows at MSKCC"/>
     <meta name="generator" content="xaringan and remark.js"/>
-    <meta name="github-repo" content="ASBecker/MSKCC-fellow-lecture-dataviz"/>
+    <meta name="github-repo" content="ASBecker/Scientific-Data-Visualization"/>
     <meta name="twitter:title" content="Data Visualization Basics for Radiology Fellows at MSKCC"/>
     <meta name="twitter:description" content="Data Visualization Basics for Radiology Fellows at MSKCC"/>
     <meta name="twitter:url" content="https://asbecker.github.io/Scientific-Data-Visualization/"/>
@@ -51,10 +49,10 @@
 class: center, middle, inverse, title-slide
 
 # Become a Data Visualization Ninja
-## ⚔<br/>What the academic fellow needs to know
+## ⚔<br/>What the academic fellow and resident needs to know
 ### Anton S. Becker, M.D., Ph.D.
-### Department of Radiology
-### 2020/12/10 (updated: 2020-12-09)
+### Director of Analytics, Body Service, Department of Radiology
+### 2021/12/23 (updated: 2021-12-22)
 
 ---
 
@@ -262,6 +260,43 @@ class: center, bottom, inverse
 
 ---
 
+# Overview: Plot Types
+
+![:col_row Histogram, Scatter plot, Boxplot, Line chart]
+![:col_list One numeric, Two Numeric, Numeric/Categorical, Numeric/Ordinal]
+
+&lt;img src="index_files/figure-html/unnamed-chunk-12-1.png" width="216" /&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;
+&lt;img src="index_files/figure-html/unnamed-chunk-13-1.png" width="216" /&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;
+&lt;img src="index_files/figure-html/unnamed-chunk-14-1.png" width="216" /&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;
+&lt;img src="index_files/figure-html/unnamed-chunk-15-1.png" width="216" /&gt;
+--
+
+![:col_row Density plot, Scatter with marginal plot, Violin plot, Area plots]
+
+&lt;img src="index_files/figure-html/unnamed-chunk-16-1.png" width="216" /&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;
+&lt;img src="index_files/figure-html/unnamed-chunk-17-1.png" width="216" /&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;
+&lt;img src="index_files/figure-html/unnamed-chunk-18-1.png" width="216" /&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;
+&lt;img src="index_files/figure-html/unnamed-chunk-19-1.png" width="288" /&gt;
+
+---
+
+# Overview: Plot Types
+
+&lt;iframe src="https://www.data-to-viz.com/#explore" width="100%" height="500px" frameBorder="0"&gt;![Screenshot of interactive graph on data-to-viz.com](img/data-to-viz.png)&lt;/iframe&gt;
+
+.footnote[
+Interactive graph on [data-to-viz.com](https://www.data-to-viz.com/)
+]
+
+
+---
+
 # Case study: Barchart
 
 &lt;img src="img/bone_tumors_0.png", alt="Bone tumor incidence over life decades from Freyschmidt (2010), p.12", style="width:500px; display:block; margin-left: auto; margin-right: auto;
@@ -288,44 +323,44 @@ class: animated slideIn
 
 # Case study: Barchart
 
-&lt;img src="index_files/figure-html/unnamed-chunk-12-1.png" width="648" style="display: block; margin: auto;" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-20-1.png" width="648" style="display: block; margin: auto;" /&gt;
 
 ---
 class: animated fadeIn
 
 # Case study: ~~Bar~~Point chart
 
-&lt;img src="index_files/figure-html/unnamed-chunk-13-1.png" width="648" style="display: block; margin: auto;" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-21-1.png" width="648" style="display: block; margin: auto;" /&gt;
 ---
 class: animated fadeIn
 
 # Case study: ~~Bar~~Point chart
 
-&lt;img src="index_files/figure-html/unnamed-chunk-14-1.png" width="648" style="display: block; margin: auto;" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-22-1.png" width="648" style="display: block; margin: auto;" /&gt;
 ---
 class: animated fadeIn
 
 # Case study: Point-and-line chart
 
-&lt;img src="index_files/figure-html/unnamed-chunk-15-1.png" width="648" style="display: block; margin: auto;" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-23-1.png" width="648" style="display: block; margin: auto;" /&gt;
 ---
 class: animated fadeIn
 
 # Case study: Area chart
 
-&lt;img src="index_files/figure-html/unnamed-chunk-16-1.png" width="648" style="display: block; margin: auto;" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-24-1.png" width="648" style="display: block; margin: auto;" /&gt;
 ---
 class: animated fadeIn
 
 # Case study: Area chart
 
-&lt;img src="index_files/figure-html/unnamed-chunk-17-1.png" width="648" style="display: block; margin: auto;" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-25-1.png" width="648" style="display: block; margin: auto;" /&gt;
 ---
 class: animated fadeIn
 
 # Case study: Area chart
 
-&lt;img src="index_files/figure-html/unnamed-chunk-18-1.png" width="648" style="display: block; margin: auto;" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-26-1.png" width="648" style="display: block; margin: auto;" /&gt;
 ---
 
 # Case study: Bar &amp;rarr; Area chart
@@ -333,7 +368,7 @@ class: animated fadeIn
 &lt;img src="img/bone_tumors_0.png" width="500" /&gt;
 ]
 .pull-right.z-0[
-&lt;img src="index_files/figure-html/unnamed-chunk-20-1.png" width="576" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-28-1.png" width="576" /&gt;
 ]
 
 --
@@ -348,42 +383,6 @@ class: animated fadeIn
 &amp;#x1f4a1;
 &lt;/div&gt;
 &lt;/div&gt;
-
----
-
-# Overview: Plot Types
-
-![:col_row Histogram, Scatter plot, Boxplot, Line chart]
-![:col_list One numeric, Two Numeric, Numeric/Categorical, Numeric/Ordinal]
-
-&lt;img src="index_files/figure-html/unnamed-chunk-21-1.png" width="216" /&gt;
-&amp;nbsp;&amp;nbsp;&amp;nbsp;
-&lt;img src="index_files/figure-html/unnamed-chunk-22-1.png" width="216" /&gt;
-&amp;nbsp;&amp;nbsp;&amp;nbsp;
-&lt;img src="index_files/figure-html/unnamed-chunk-23-1.png" width="216" /&gt;
-&amp;nbsp;&amp;nbsp;&amp;nbsp;
-&lt;img src="index_files/figure-html/unnamed-chunk-24-1.png" width="216" /&gt;
---
-
-![:col_row Density plot, Scatter with marginal plot, Violin plot, Area plots]
-
-&lt;img src="index_files/figure-html/unnamed-chunk-25-1.png" width="216" /&gt;
-&amp;nbsp;&amp;nbsp;&amp;nbsp;
-&lt;img src="index_files/figure-html/unnamed-chunk-26-1.png" width="216" /&gt;
-&amp;nbsp;&amp;nbsp;&amp;nbsp;
-&lt;img src="index_files/figure-html/unnamed-chunk-27-1.png" width="216" /&gt;
-&amp;nbsp;&amp;nbsp;&amp;nbsp;
-&lt;img src="index_files/figure-html/unnamed-chunk-28-1.png" width="288" /&gt;
-
----
-
-# Overview: Plot Types
-
-&lt;iframe src="https://www.data-to-viz.com/#explore" width="100%" height="500px" frameBorder="0"&gt;![Screenshot of interactive graph on data-to-viz.com](img/data-to-viz.png)&lt;/iframe&gt;
-
-.footnote[
-Interactive graph on [data-to-viz.com](https://www.data-to-viz.com/)
-]
 
 ---
 background-image: url(img/map_engelberg.png)
@@ -480,28 +479,249 @@ Paul Klee
 ]
 
 ---
+class: animated fadeIn
 
+# Case Study: Color
+
+.center[
+![Bar chart blood loss predicts survival](img/blood_loss_raw.jpeg)
+
+Figure 5 from Katz SC et al., Operative Blood Loss &lt;br /&gt;
+Independently Predicts Recurrence and Survival After Resection &lt;br /&gt;of Hepatocellular Carcinoma, Ann Surg 2009;249: 617–623
+
+]
+---
+class: animated fadeIn
+
+# Case Study: Color
+
+.center[
+
+&lt;img src="index_files/figure-html/unnamed-chunk-31-1.png" width="576" /&gt;
+
+
+modified after Katz SC et al., Ann Surg 2009;249: 617–623
+
+]
+
+---
+class: animated rollIn
+
+# Case Study: Color
+
+.center[
+
+&lt;img src="index_files/figure-html/unnamed-chunk-32-1.png" width="576" /&gt;
+
+modified after Katz SC et al., Ann Surg 2009;249: 617–623
+
+]
+---
+class: animated rollIn
+
+# Case Study: Color
+
+.center[
+
+&lt;img src="index_files/figure-html/unnamed-chunk-33-1.png" width="576" /&gt;
+
+modified after Katz SC et al., Ann Surg 2009;249: 617–623
+
+]
+
+---
+class: animated fadeIn
+
+# Case Study: Color
+
+&lt;img src="index_files/figure-html/unnamed-chunk-34-1.png" width="576" style="display: block; margin: auto;" /&gt;
+
+---
+class: animated fadeIn
+
+# Case Study: Color
+
+.center[
+
+&lt;img src="index_files/figure-html/unnamed-chunk-35-1.png" width="576" /&gt;
+
+]
+
+---
+class: animated fadeIn
+
+# Case Study: Color
+
+.pull-left[
+&lt;img src="index_files/figure-html/unnamed-chunk-36-1.png" width="576" /&gt;
+Data courtesy of Dr. Mithat Gönen, MSKCC
+]
+.pull-right[
+&lt;img src="index_files/figure-html/unnamed-chunk-37-1.png" width="576" /&gt;
+Modified after Katz SC et al., Ann Surg 2009;249: 617–623
+]
+
+
+
+---
+
+background-image: url("img/opal_pool_yellowstone.jpg")
+background-size: cover
+class: center, bottom, inverse
+
+## Pitfalls
+
+#### Opal pool, Yellowstone National Park, Wyoming
+
+---
+
+# Pitfall 1: Too much
+
+&lt;img src="index_files/figure-html/unnamed-chunk-38-1.png" width="1008" /&gt;
+
+---
+
+# Pitfall: Too much - Organize
+
+&lt;img src="index_files/figure-html/unnamed-chunk-39-1.png" width="1008" /&gt;
+
+---
+
+# Pitfall: Too much - Simplify
+
+.center[
+&lt;img src="index_files/figure-html/unnamed-chunk-40-1.png" width="648" /&gt;
+]
+Source: [Do et al., Radiology (2021)](https://doi.org/10.1148/radiol.2021210043)
+---
+
+# Pitfall 2: Scales
+
+![3 examples of dual-scale charts by Isenberg et al.](img/isenberg-fig1.png)
+.footnote[
+Source: Isenberg P, et al. A study on Dual-Scale data charts. [IEEE Trans Vis Comput Graph. 2011 Dec;17(12):2469–78](https://doi.org/10.1109/TVCG.2011.160).
+]
+
+---
+
+# Pitfall 2: Scales
+
+&lt;img src="img/isenberg-fig5.png" width="780" height="400" style="display: block; margin: auto;" /&gt;
+
+.footnote[
+Source: Isenberg P, et al. A study on Dual-Scale data charts. [IEEE Trans Vis Comput Graph. 2011 Dec;17(12):2469–78](https://doi.org/10.1109/TVCG.2011.160).
+]
+
+---
+
+# Pitfall 2: Scales
+
+&lt;img src="img/isenberg-fig6.png" width="780" height="400" style="display: block; margin: auto;" /&gt;
+
+.footnote[
+Source: Isenberg P, et al. A study on Dual-Scale data charts. [IEEE Trans Vis Comput Graph. 2011 Dec;17(12):2469–78](https://doi.org/10.1109/TVCG.2011.160).
+]
+
+---
+
+# Pitfall 2: Scales
+
+&lt;img src="img/isenberg-fig7.png" width="780" height="400" style="display: block; margin: auto;" /&gt;
+
+.footnote[
+Source: Isenberg P, et al. A study on Dual-Scale data charts. [IEEE Trans Vis Comput Graph. 2011 Dec;17(12):2469–78](https://doi.org/10.1109/TVCG.2011.160).
+]
+
+---
+
+# Pitfall 2: Scales
+
+&lt;img src="img/isenberg-fig8.png" width="780" height="400" style="display: block; margin: auto;" /&gt;
+
+.footnote[
+Source: Isenberg P, et al. A study on Dual-Scale data charts. [IEEE Trans Vis Comput Graph. 2011 Dec;17(12):2469–78](https://doi.org/10.1109/TVCG.2011.160).
+]
+---
+
+# Pitfall 2: Scales
+
+.center[
+&lt;img src="index_files/figure-html/unnamed-chunk-45-1.png" width="720" /&gt;
+]
+
+---
+
+# Pitfall: Scales
+
+&lt;img src="index_files/figure-html/unnamed-chunk-46-1.png" width="432" /&gt;
+&lt;img src="img/genderIR_axis_bracket.png" width="80" height="300" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-48-1.png" width="504" /&gt;
+
+.footnote[
+[Figure adapted from] Deipolyi AR, et al. Gender Disparity in Industry Relationships With Academic Interventional Radiology Physicians. &lt;br /&gt;&lt;br /&gt;
+[American Journal of Roentgenology. 2020 Apr 29:1-8](https://www.ajronline.org/doi/abs/10.2214/AJR.19.22176).
+]
+
+---
+
+# Pitfall 3: Pie charts (do not use them)
+
+- **Do not use pie charts**
+- Information always better depicted in other charts (e.g. bar or boxplot) or a table
+- Example: Malignant bone tumors in the 4&lt;sup&gt;th&lt;/sup&gt; decade of life
+
+&lt;img src="index_files/figure-html/unnamed-chunk-49-1.png" width="504" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-50-1.png" width="504" /&gt;
+
+---
+
+# The only acceptable pie chart
+
+![Pie chart rectal bleeding by @MonaChalabi](img/rectal_bleeding_by-at-MonaChalabi.jpeg)
+Source: [@MonaChalabi](https://twitter.com/monachalabi/status/943875732241047553)
+
+---
 <style>.panelset{--panel-tab-active-foreground: #000000;--panel-tab-hover-foreground: #4584DB;--panel-tab-font-family: helvetica;}</style>
 # Pitfalls
 
 .panelset[
+
+.panel[.panel-name[Know Your Audience]
+
+.pull-left[
+- Font type and size:
+  - Look up font type of journal
+  - Hi-res figure on screen will look different than actual size in journal (zoom out or in as needed, use a ruler)
+  - Zoom presentation needs bigger font than in lecture hall
+  
+- Approx. 8% of male and 0.5% of female readers will be colorblind
+  - Do use a colorblind-friendly palette&lt;sup&gt;1&lt;/sup&gt;
+]
+
+.footnote[
+  &lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;
+  [1] You can use the online tools [colorbrewer2.org](https://colorbrewer2.org/) or [coolors.co](https://coolors.co/generate)
+  ]
+  
+.pull-right[
+- Typical  resolution "dots per inch" (dpi)
+  - MacBook Retina screen 220 dpi
+  - iPhone 326 dpi
+  - Print: Graphics ~600 dpi
+  - Print: Line plots (dataviz) ~1200 dpi
+  
+&lt;img src="index_files/figure-html/unnamed-chunk-52-1.png" width="504" /&gt;
+]
+]
+
 .panel[.panel-name[Too many colors and shapes]
 .pull-left[
 - Don't use too many colors, point shapes, 3D etc.
-
 - Split up overloaded graphs into subfigures
-
-- Do use a colorblind-friendly palette&lt;sup&gt;1&lt;/sup&gt;
-
-  .footnote[
-  &lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;
-  [1] You can use the online tools [colorbrewer2.org](https://colorbrewer2.org/) or [coolors.co](https://coolors.co/generate)
-  ]
-&lt;img src="index_files/figure-html/unnamed-chunk-32-1.png" width="504" /&gt;
-
+![Stackoverflow screenshot of abhorrent 3D chart](img/stackoverflow_q.jpg)
 ]
 .pull-right[
-![Stackoverflow screenshot on how to recreate abhorrent 3D chart](img/stackoverflow_q.jpg)
+![Figure metastatic cancer spread panels](img/plot_mets_final.png)
 ]
 ]
 
@@ -518,9 +738,9 @@ Paul Klee
 [1] Isenberg P, et al. A study on Dual-Scale data charts. [IEEE Trans Vis Comput Graph. 2011 Dec;17(12):2469–78](https://doi.org/10.1109/TVCG.2011.160).
 ]
 
-&lt;img src="index_files/figure-html/unnamed-chunk-33-1.png" width="432" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-53-1.png" width="432" /&gt;
 &lt;img src="img/genderIR_axis_bracket.png" width="80" height="300" /&gt;
-&lt;img src="index_files/figure-html/unnamed-chunk-35-1.png" width="504" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-55-1.png" width="504" /&gt;
 ]
 
 .panel[.panel-name[Pie Charts]
@@ -529,8 +749,8 @@ Paul Klee
 - Information always better depicted in other charts (e.g. bar or boxplot) or a table
 - Example: Malignant bone tumors in the 4&lt;sup&gt;th&lt;/sup&gt; decade of life
 
-&lt;img src="index_files/figure-html/unnamed-chunk-36-1.png" width="504" /&gt;
-&lt;img src="index_files/figure-html/unnamed-chunk-37-1.png" width="504" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-56-1.png" width="504" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-57-1.png" width="504" /&gt;
 ]
 ]
 
@@ -559,7 +779,7 @@ Paul Klee
 --
 
 .pull-right[
-&lt;img src="index_files/figure-html/unnamed-chunk-38-1.png" width="432" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-58-1.png" width="432" /&gt;
 ]
 ---
 class: animated, fadeIn
@@ -576,7 +796,7 @@ Gregory Bateson
 ]]]
 
 .pull-right[
-&lt;img src="index_files/figure-html/unnamed-chunk-39-1.png" width="432" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-59-1.png" width="432" /&gt;
 ]
 
 ---
@@ -592,6 +812,7 @@ Gregory Bateson
 - Scherer, Cédric. [Up-to-date ggplot2 tutorial](https://cedricscherer.netlify.app/2019/08/05/a-ggplot2-tutorial-for-beautiful-plotting-in-r/)
 
 - &lt;svg style="height:0.8em;top:.04em;position:relative;fill:#4584DB;" viewBox="0 0 512 512"&gt;&lt;path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/&gt;&lt;/svg&gt; [@W_R_Chase](https://twitter.com/W_R_Chase) [@EdwardTufte](https://twitter.com/EdwardTufte) 
+[@Jamie_Bio](https://twitter.com/Jamie_Bio)
 
 - &lt;svg xmlns="http://www.w3.org/2000/svg" style="height:0.8em;top:.04em;position:relative;" viewBox="-4.771 0.104 53.521 44.858"&gt;&lt;path fill="#FFF" d="M29.909 35.89c-1.999 1.997-5.218 2.382-7.921 2.382-2.7 0-5.922-.385-7.918-2.382M36.021 4.276L25.899 1.894l-3.93 11.996L25.9 1.894m18.241 3.201a3.99 3.99 0 1 1-7.98 0 3.991 3.991 0 0 1 7.98 0zm.661 23.906c0 8.262-10.263 14.961-22.922 14.961-12.66 0-22.922-6.698-22.922-14.961 0-8.262 10.262-14.961 22.922-14.961 12.659 0 22.922 6.698 22.922 14.961zM-.744 26.676a5.061 5.061 0 0 1-3.027-4.636 5.06 5.06 0 0 1 8.935-3.257m33.568.103a5.061 5.061 0 0 1 9.018 3.154 5.064 5.064 0 0 1-3.23 4.72"/&gt;&lt;path d="M21.879 44.963c-13.191 0-23.922-7.16-23.922-15.961 0-.608.051-1.21.151-1.801a6.066 6.066 0 0 1-2.879-5.161 6.068 6.068 0 0 1 6.06-6.061c1.493 0 2.916.546 4.017 1.522 4.149-2.663 9.73-4.339 15.887-4.455L25.235.71l.882.208.021.005 9.421 2.218A5 5 0 0 1 40.151.105a4.996 4.996 0 0 1 4.99 4.991 4.996 4.996 0 0 1-4.99 4.99 4.995 4.995 0 0 1-4.99-4.984l-8.596-2.024-3.273 9.99c5.933.231 11.291 1.912 15.291 4.517a6.028 6.028 0 0 1 4.108-1.605 6.068 6.068 0 0 1 6.061 6.061 6.019 6.019 0 0 1-3.08 5.28c.087.553.132 1.113.132 1.681-.002 8.801-10.734 15.961-23.925 15.961zM.157 27.11a9.05 9.05 0 0 0-.2 1.892c0 7.699 9.834 13.961 21.922 13.961 12.088 0 21.922-6.263 21.922-13.961 0-.612-.062-1.215-.183-1.807a1.003 1.003 0 0 1-.099-.435c-.669-2.627-2.494-5.012-5.13-6.934a.992.992 0 0 1-.429-.304c-4.007-2.755-9.732-4.482-16.081-4.482-6.285 0-11.961 1.693-15.962 4.401a1.022 1.022 0 0 1-.401.279C2.823 21.643.951 24.044.256 26.694a.992.992 0 0 1-.084.384c-.005.011-.009.022-.015.032zm40.097-8.319c2.319 1.855 4.021 4.064 4.891 6.488a4.033 4.033 0 0 0 1.605-3.239 4.065 4.065 0 0 0-4.061-4.061 4.04 4.04 0 0 0-2.435.812zm-38.965-.812a4.065 4.065 0 0 0-4.06 4.061c0 1.213.54 2.34 1.436 3.1.899-2.405 2.618-4.596 4.946-6.433a4.066 4.066 0 0 0-2.322-.728zM40.15 2.104c-1.648 0-2.99 1.342-2.99 2.991s1.342 2.99 2.99 2.99 2.99-1.341 2.99-2.99-1.341-2.991-2.99-2.991zM21.988 39.271c-4.005 0-6.827-.875-8.626-2.675a1 1 0 0 1 1.415-1.414c1.405 1.405 3.763 2.089 7.211 2.089 3.447 0 5.807-.684 7.214-2.089a.999.999 0 1 1 1.413 1.414c-1.801 1.8-4.622 2.675-8.627 2.675z"/&gt;&lt;path fill="#FF4500" d="M30.097 22.35c-2.038 0-3.749 1.707-3.749 3.745 0 2.037 1.711 3.688 3.749 3.688s3.688-1.651 3.688-3.688c0-2.038-1.651-3.745-3.688-3.745zm-16.158 0c-2.036 0-3.745 1.709-3.745 3.745s1.708 3.688 3.745 3.688 3.688-1.652 3.688-3.688-1.652-3.745-3.688-3.745z"/&gt;&lt;/svg&gt; &lt;https://www.reddit.com/r/dataisbeautiful/&gt;
 
@@ -599,13 +820,16 @@ Gregory Bateson
 
 class: center, middle
 
-# Thanks!
+## Thank you for your attention
 
-[&lt;svg style="height:0.8em;top:.04em;position:relative;fill:#4584DB;" viewBox="0 0 512 512"&gt;&lt;path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/&gt;&lt;/svg&gt;@dr_becker](https://twitter.com/dr_becker) / [beckera1@mskcc.org](mailto:beckera1@mskcc.org)
+[&lt;svg style="height:0.8em;top:.04em;position:relative;fill:#4584DB;" viewBox="0 0 512 512"&gt;&lt;path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/&gt;&lt;/svg&gt;@Anton Becker](https://twitter.com/dr_becker) / [beckera1@mskcc.org](mailto:beckera1@mskcc.org)
 
 Slides created via the R package [**xaringan**](https://github.com/yihui/xaringan).
 
 Also powered by [remark.js](https://remarkjs.com), [knitr](http://yihui.org/knitr), [R Markdown](https://rmarkdown.rstudio.com) and [xaringanExtra](https://github.com/gadenbuie/xaringanExtra).
+
+
+Thanks to [&lt;svg style="height:0.8em;top:.04em;position:relative;fill:#4584DB;" viewBox="0 0 512 512"&gt;&lt;path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/&gt;&lt;/svg&gt;@Mithat Gönen](https://twitter.com/gonen_mithat), [&lt;svg style="height:0.8em;top:.04em;position:relative;fill:#4584DB;" viewBox="0 0 512 512"&gt;&lt;path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/&gt;&lt;/svg&gt;@Richard Do](https://twitter.com/DrRichardDo), [&lt;svg style="height:0.8em;top:.04em;position:relative;fill:#4584DB;" viewBox="0 0 512 512"&gt;&lt;path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/&gt;&lt;/svg&gt;@Yihui Xie](https://twitter.com/xieyihui), [&lt;svg style="height:0.8em;top:.04em;position:relative;fill:#4584DB;" viewBox="0 0 512 512"&gt;&lt;path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/&gt;&lt;/svg&gt;@Garrick Aden-Buie](https://twitter.com/grrrck)
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
