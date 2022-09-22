@@ -1,9 +1,9 @@
 ---
 title: "Become a Data Visualization Ninja"
-subtitle: "⚔<br/>What the academic fellow and resident needs to know"
+subtitle: "⚔<br/>What the academic fellow needs to know"
 author: "Anton S. Becker, M.D., Ph.D."
 institute: "Director of Analytics, Body Service, Department of Radiology"
-date: "2022/01/13 (updated: `r Sys.Date()`)"
+date: "2022-09-22 (updated: `r Sys.Date()`)"
 output:
   xaringan::moon_reader:
     lib_dir: libs
@@ -1220,11 +1220,11 @@ class: center, middle
 
 ## Thank you for your attention
 
-[`r twitter`@Anton Becker](https://twitter.com/dr_becker) / [beckera1@mskcc.org](mailto:beckera1@mskcc.org)
+[`r twitter`Anton Becker](https://twitter.com/dr_becker) / [beckera1@mskcc.org](mailto:beckera1@mskcc.org)
 
-Slides created via the R package [**xaringan**](https://github.com/yihui/xaringan) by [`r twitter`@Yihui Xie](https://twitter.com/xieyihui).
+Slides created via the R package [**xaringan**](https://github.com/yihui/xaringan) by [`r twitter`Yihui Xie](https://twitter.com/xieyihui).
 
-Also powered by [remark.js](https://remarkjs.com), [knitr](http://yihui.org/knitr), [R Markdown](https://rmarkdown.rstudio.com) and [xaringanExtra](https://github.com/gadenbuie/xaringanExtra) by [`r twitter`@Garrick Aden-Buie](https://twitter.com/grrrck).
+Also powered by [remark.js](https://remarkjs.com), [knitr](http://yihui.org/knitr), [R Markdown](https://rmarkdown.rstudio.com) and [xaringanExtra](https://github.com/gadenbuie/xaringanExtra) by [`r twitter`Garrick Aden-Buie](https://twitter.com/grrrck).
 
 
-Thanks to [`r twitter`@Daniela Ferraro](https://twitter.com/DanielaAFerraro), [`r twitter`@Mithat Gönen](https://twitter.com/gonen_mithat), [`r twitter`@Richard Do](https://twitter.com/DrRichardDo)
+Thanks to [`r twitter`Daniela Ferraro](https://twitter.com/DanielaAFerraro), [`r twitter`Mithat Gönen](https://twitter.com/gonen_mithat), [`r twitter`Richard Do](https://twitter.com/DrRichardDo)
