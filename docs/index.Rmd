@@ -1,9 +1,9 @@
 ---
 title: "Become a Data Visualization Ninja"
-subtitle: "⚔<br/>What the academic fellow needs to know"
+subtitle: "⚔<br/>What the resident needs to know"
 author: "Anton S. Becker, M.D., Ph.D."
 institute: "Director of Analytics, Body Service, Department of Radiology"
-date: "2022-09-22 (updated: `r Sys.Date()`)"
+date: "2023-01-27 (updated: `r Sys.Date()`)"
 output:
   xaringan::moon_reader:
     lib_dir: libs
@@ -359,172 +359,6 @@ qplot(x = decade, y = percent, fill = tumor, geom = "area", data = filter(bone_t
 Interactive graph on [data-to-viz.com](https://www.data-to-viz.com/)
 ]
 
-
----
-
-# Case study: Barchart
-
-<img src="img/bone_tumors_0.png", alt="Bone tumor incidence over life decades from Freyschmidt (2010), p.12", style="width:500px; display:block; margin-left: auto; margin-right: auto;
-">
-
----
-class: animated fadeIn
-
-# Case study: Barchart
-
-<img src="img/bone_tumors_1.png", alt="Bone tumor incidence over life decades from Freyschmidt (2010), p.12", style="width:500px; display:block;  margin-left: auto; margin-right: auto;
-">
-
----
-class: animated rollIn
-
-# Case study: Barchart
-
-<img src="img/bone_tumors_2.png", alt="Bone tumor incidence over life decades from Freyschmidt (2010), p.12", style="width:500px; display:block;  margin-left: auto; margin-right: auto;
-">
-
----
-class: animated slideIn
-
-# Case study: Barchart
-
-```{r, echo=FALSE, fig.align='center', fig.width=9}
-ggplot(bone_tumors, aes(x = decade, y = percent, fill = tumor_fct)) +
-  facet_grid(rows = vars(rev(dign))) +
-  scale_fill_brewer(type = "div") +
-  theme_minimal() +
-  theme(
-    strip.background = element_blank(),
-    strip.text.y = element_blank(),
-    legend.title = element_blank()
-    ) -> fig_bone_base
-
-fig_bone_base +
-  geom_bar(stat = "identity", position = "dodge")
-
-```
-
----
-class: animated fadeIn
-
-# Case study: ~~Bar~~Point chart
-
-```{r, echo=FALSE, fig.align='center', fig.width=9}
-fig_bone_base +
-  geom_point(aes(color = tumor_fct), position=position_dodge(width=0.9), size = 3) +
-  scale_color_brewer(type = "div")
-```
----
-class: animated fadeIn
-
-# Case study: ~~Bar~~Point chart
-
-```{r, echo=FALSE, fig.align='center', fig.width=9}
-fig_bone_base +
-  geom_point(aes(color = tumor_fct), size = 3) +
-  scale_color_brewer(type = "div")
-```
----
-class: animated fadeIn
-
-# Case study: Point-and-line chart
-
-```{r, echo=FALSE, fig.align='center', fig.width=9}
-fig_bone_base +
-  geom_point(aes(color = tumor_fct), size = 3) +
-  geom_line(aes(color = tumor_fct)) +
-  scale_color_brewer(type = "div")
-```
----
-class: animated fadeIn
-
-# Case study: Area chart
-
-```{r, echo=FALSE, fig.align='center', fig.width=9}
-fig_bone_base +
-  geom_area()
-```
----
-class: animated fadeIn
-
-# Case study: Area chart
-
-```{r, echo=FALSE, fig.align='center', fig.width=9}
-
-bone_tumor_labels <- bone_tumors %>% 
-  distinct(tumor) %>% 
-  mutate(
-    percent = c(35, 23, 18, 5, 50, 27, 12.5, 12.5),
-    decade = c(5.5, 5, 2, 4, 1.5, 1.4, 1.5, 3),
-    dign = c(rep("malignant", 4), rep("benign", 4)),
-    txt_color = c("white", rep("black", 6), "white")
-  )
-
-ggplot(bone_tumors, aes(x = decade, y = percent)) +
-  geom_area(aes(fill = tumor_fct)) +
-  geom_text(data = bone_tumor_labels, aes(label = tumor, color = txt_color)) +
-  facet_grid(rows = vars(rev(dign))) +
-  scale_fill_brewer(type = "div") +
-  scale_color_manual(values = c("black", "white")) +
-  theme_minimal() +
-  theme(
-    strip.background = element_blank(),
-    strip.text.y = element_blank(),
-    legend.title = element_blank(),
-    legend.position = "none"
-    ) -> fig_bone_area
-
-grid.arrange(fig_bone_area, grid.rect(gp=gpar(col="white")), ncol = 2, widths = c(7.45, 1.55))
-```
----
-class: animated fadeIn
-
-# Case study: Area chart
-
-```{r, echo=FALSE, fig.align='center', fig.width=9}
-fig_bone_area +
-  labs(
-    title = "Incidence of common <span style='color:#8C510A'>malignant</span> and 
-    <span style='color:#01665D'>benign</span> bone tumors over 6 life decades",
-    subtitle = "Adapted from Freyschmidt (2010) / data from Dahlin (1978)"
-  ) +
-  scale_x_continuous(breaks = 1:6) +
-  scale_y_continuous(labels = function(x) paste0(x, "%")) +
-  theme(
-    plot.title = element_markdown(),
-    axis.title = element_blank()
-  ) -> fig_bone_final
-
-grid.arrange(fig_bone_final, grid.rect(gp=gpar(col="white")), ncol = 2, widths = c(7.45, 1.55))
-
-```
----
-
-# Case study: Bar &rarr; Area chart
-.pull-left.z-0[
-```{r, echo=FALSE, out.width=500}
-knitr::include_graphics("img/bone_tumors_0.png")
-```
-]
-.pull-right.z-0[
-```{r, echo=FALSE, fig.width=8}
-fig_bone_final
-```
-]
-
---
-
-<div style="position: absolute; top: 200px; z-index: 2; width:400px; margin-left:-600px; left:50%;">
-.bubble.thought.vanishIn[
-&rarr; Remove clutter <br />
-&rarr; Get the right graph for your story<br />
-&rarr; Make it self-explanatory
-]
-<div style="position: absolute; top: 250px; z-index: 2; margin-left:280px; left:50%; font-size: 250%;">
-&#x1f4a1;
-</div>
-</div>
-
 ---
 background-image: url(img/map_engelberg.png)
 background-size: cover
@@ -558,17 +392,8 @@ Paul Klee
 
 --
 
-.leader-start-1.right.z-2[
-```{r, echo=FALSE, fig.width=4, fig.height=4} 
-fig_bone_base +
-  geom_area() +
-  theme_void() +
-  theme(
-    legend.position = "none", 
-    strip.background = element_blank(),
-    strip.text.y = element_blank()
-    )
-```
+.leader-start-1.right[
+<img src="img/map_engelberg.png" style = "fig.width='240px'; fig.height='165px'">
 ]
 ---
 
@@ -775,7 +600,64 @@ first_bl
 Modified after Katz SC et al., Ann Surg 2009;249: 617–623
 ]
 
+---
 
+# Other elements
+
+.pull-left[
+- Qualitative
+
+  - Shapes &nbsp; ![ggplot2 points](img/pch.png)
+
+  - Linetypes &nbsp; ![ggplot2 lines](img/lty.png)
+  
+- Quantitative
+
+  - Length &nbsp; ![ggplot2 points](img/len.png)
+  
+  - Area size &nbsp; ![ggplot2 points](img/area.png)
+  
+  - Tilt/angle &nbsp; ![ggplot2 points](img/tilt.png)
+  
+  - Color saturation &nbsp; ![ggplot2 points](img/sat.png)
+]
+
+--
+
+.pull-right[
+```{r, echo=FALSE, fig.width=6, fig.height=6}
+ggplot(data = datasaurus_dozen, aes(x, y)) +
+  geom_point() +
+  theme_minimal() +
+  theme(axis.title = element_blank())
+```
+]
+---
+class: animated, fadeIn
+
+# Other elements
+
+.pull-left.pa4.z-0[
+.ml0.mt0.pl4.black-90.bl.bw2.b--blue[
+.f3.f4-m.f3-l.lh-copy.measure.mt0[
+Information consists of differences that make a difference
+]
+.center.f6.ttu.tracked.fs-normal[
+Gregory Bateson
+]]]
+
+.pull-right[
+```{r, echo=FALSE, fig.width=6, fig.height=6}
+ggplot(
+  data = datasaurus_dozen %>% mutate(dino = ifelse(dataset=="dino", "red", "black")), 
+  aes(x, y, color = dino)
+  ) +
+  geom_point() +
+  theme_minimal() +
+  scale_color_manual(values = c("grey", "red")) +
+  theme(axis.title = element_blank(), legend.position = "none")
+```
+]
 
 ---
 
@@ -1140,62 +1022,169 @@ ggplot(data = bone_pie, aes(y = percent, x = reorder(tumor, -percent))) +
 
 ---
 
-# Other elements
+# Case study: Putting it all together
 
-.pull-left[
-- Qualitative
+<img src="img/bone_tumors_0.png", alt="Bone tumor incidence over life decades from Freyschmidt (2010), p.12", style="width:500px; display:block; margin-left: auto; margin-right: auto;
+">
 
-  - Shapes &nbsp; ![ggplot2 points](img/pch.png)
+---
+class: animated fadeIn
 
-  - Linetypes &nbsp; ![ggplot2 lines](img/lty.png)
-  
-- Quantitative
+# Case study: Clean up
 
-  - Length &nbsp; ![ggplot2 points](img/len.png)
-  
-  - Area size &nbsp; ![ggplot2 points](img/area.png)
-  
-  - Tilt/angle &nbsp; ![ggplot2 points](img/tilt.png)
-  
-  - Color saturation &nbsp; ![ggplot2 points](img/sat.png)
+<img src="img/bone_tumors_1.png", alt="Bone tumor incidence over life decades from Freyschmidt (2010), p.12", style="width:500px; display:block;  margin-left: auto; margin-right: auto;
+">
+
+---
+class: animated rollIn
+
+# Case study: Clean up
+
+<img src="img/bone_tumors_2.png", alt="Bone tumor incidence over life decades from Freyschmidt (2010), p.12", style="width:500px; display:block;  margin-left: auto; margin-right: auto;
+">
+
+---
+class: animated slideIn
+
+# Case study: Clean up
+
+```{r, echo=FALSE, fig.align='center', fig.width=9}
+fig_bone_base <- ggplot(bone_tumors, aes(x = decade, y = percent, fill = tumor_fct)) +
+  facet_grid(rows = vars(rev(dign))) +
+  scale_fill_brewer(type = "div") +
+  theme_minimal() +
+  theme(
+    strip.background = element_blank(),
+    strip.text.y = element_blank(),
+    legend.title = element_blank()
+    )
+
+fig_bone_base +
+  geom_bar(stat = "identity", position = "dodge")
+
+```
+
+---
+class: animated fadeIn
+
+# Case study: Simplify
+
+```{r, echo=FALSE, fig.align='center', fig.width=9}
+fig_bone_base +
+  geom_point(aes(color = tumor_fct), position=position_dodge(width=0.9), size = 3) +
+  scale_color_brewer(type = "div")
+```
+---
+class: animated fadeIn
+
+# Case study: Simplify
+
+```{r, echo=FALSE, fig.align='center', fig.width=9}
+fig_bone_base +
+  geom_point(aes(color = tumor_fct), size = 3) +
+  scale_color_brewer(type = "div")
+```
+---
+class: animated fadeIn
+
+# Case study: Chose the right graph
+
+```{r, echo=FALSE, fig.align='center', fig.width=9}
+fig_bone_base +
+  geom_point(aes(color = tumor_fct), size = 3) +
+  geom_line(aes(color = tumor_fct)) +
+  scale_color_brewer(type = "div")
+```
+---
+class: animated fadeIn
+
+# Case study: Chose the right graph
+
+```{r, echo=FALSE, fig.align='center', fig.width=9}
+fig_bone_base +
+  geom_area()
+```
+---
+class: animated fadeIn
+
+# Case study: Make it self explanatory
+
+```{r, echo=FALSE, fig.align='center', fig.width=9}
+
+bone_tumor_labels <- bone_tumors %>% 
+  distinct(tumor) %>% 
+  mutate(
+    percent = c(35, 23, 18, 5, 50, 27, 12.5, 12.5),
+    decade = c(5.5, 5, 2, 4, 1.5, 1.4, 1.5, 3),
+    dign = c(rep("malignant", 4), rep("benign", 4)),
+    txt_color = c("white", rep("black", 6), "white")
+  )
+
+ggplot(bone_tumors, aes(x = decade, y = percent)) +
+  geom_area(aes(fill = tumor_fct)) +
+  geom_text(data = bone_tumor_labels, aes(label = tumor, color = txt_color)) +
+  facet_grid(rows = vars(rev(dign))) +
+  scale_fill_brewer(type = "div") +
+  scale_color_manual(values = c("black", "white")) +
+  theme_minimal() +
+  theme(
+    strip.background = element_blank(),
+    strip.text.y = element_blank(),
+    legend.title = element_blank(),
+    legend.position = "none"
+    ) -> fig_bone_area
+
+grid.arrange(fig_bone_area, grid.rect(gp=gpar(col="white")), ncol = 2, widths = c(7.45, 1.55))
+```
+---
+class: animated fadeIn
+
+# Case study: Bells and whistles
+
+```{r, echo=FALSE, fig.align='center', fig.width=9}
+fig_bone_area +
+  labs(
+    title = "Incidence of common <span style='color:#8C510A'>malignant</span> and 
+    <span style='color:#01665D'>benign</span> bone tumors over 6 life decades",
+    subtitle = "Adapted from Freyschmidt (2010) / data from Dahlin (1978)"
+  ) +
+  scale_x_continuous(breaks = 1:6) +
+  scale_y_continuous(labels = function(x) paste0(x, "%")) +
+  theme(
+    plot.title = element_markdown(),
+    axis.title = element_blank()
+  ) -> fig_bone_final
+
+grid.arrange(fig_bone_final, grid.rect(gp=gpar(col="white")), ncol = 2, widths = c(7.45, 1.55))
+
+```
+---
+
+# Case study: Putting it all together
+.pull-left.z-0[
+```{r, echo=FALSE, out.width=500}
+knitr::include_graphics("img/bone_tumors_0.png")
+```
+]
+.pull-right.z-0[
+```{r, echo=FALSE, fig.width=8}
+fig_bone_final
+```
 ]
 
 --
 
-.pull-right[
-```{r, echo=FALSE, fig.width=6, fig.height=6}
-ggplot(data = datasaurus_dozen, aes(x, y)) +
-  geom_point() +
-  theme_minimal() +
-  theme(axis.title = element_blank())
-```
+<div style="position: absolute; top: 200px; z-index: 2; width:400px; margin-left:-600px; left:50%;">
+.bubble.thought.vanishIn[
+&rarr; Remove clutter <br />
+&rarr; Get the right graph for your story<br />
+&rarr; Make it self-explanatory
 ]
----
-class: animated, fadeIn
+<div style="position: absolute; top: 250px; z-index: 2; margin-left:280px; left:50%; font-size: 250%;">
+&#x1f4a1;
+</div>
+</div>
 
-# Other elements
-
-.pull-left.pa4.z-0[
-.ml0.mt0.pl4.black-90.bl.bw2.b--blue[
-.f3.f4-m.f3-l.lh-copy.measure.mt0[
-Information consists of differences that make a difference
-]
-.center.f6.ttu.tracked.fs-normal[
-Gregory Bateson
-]]]
-
-.pull-right[
-```{r, echo=FALSE, fig.width=6, fig.height=6}
-ggplot(
-  data = datasaurus_dozen %>% mutate(dino = ifelse(dataset=="dino", "red", "black")), 
-  aes(x, y, color = dino)
-  ) +
-  geom_point() +
-  theme_minimal() +
-  scale_color_manual(values = c("grey", "red")) +
-  theme(axis.title = element_blank(), legend.position = "none")
-```
-]
 
 ---
 
