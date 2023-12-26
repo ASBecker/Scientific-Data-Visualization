@@ -1,12 +1,12 @@
 /*
-CSS for xaringan slides in MSK theme
-Author: Upasana Raval
-Updated: 02/13/2020
+CSS for xaringan slides in NYU theme
+Author: Anton Becker
+Updated: 2023-12-25
 */
 
 /* background color tweak */
 .inverse {
-  background-color: #4584DB;
+  background-color: #57068c;
   color: #fff;
   text-shadow: none;
 }
@@ -18,7 +18,7 @@ body {font-family: 'helvetica';
   color: "#000";
 }
 
-.msk-color {color: #4584DB}
+.msk-color {color: #57068c}
 
 /* Code wrapping */
 
@@ -29,7 +29,7 @@ pre {
 /* Link highlight */
 
 a, a > code {
-  color: #4584DB;
+  color: #57068c;
   text-decoration: none;
 }
 
@@ -37,11 +37,11 @@ a, a > code {
 
 /* Add image and change bg color */
 .title-slide {
-  background-image: url(msk-white-logo.png),
-  url(msk-blue-logo.png);
+  background-image: url(nyu_logo_white.png),
+  url(nyu_logo_purple.png);
   background-position: 10% 10%, 350% 280%;
   background-size: 250px, 800px;
-  background-color: #4584DB;
+  background-color: #57068c;
   padding-right: 0px;
 }
 
@@ -79,7 +79,7 @@ a, a > code {
 /* Regular slide layout */
 
 .remark-slide-content:not(.inverse) {
-  border-top: 100px solid #4584DB;
+  border-top: 100px solid #57068c;
   background-image: url(msk-black-logo.png);
   background-size: 150px;
   background-position: bottom right;

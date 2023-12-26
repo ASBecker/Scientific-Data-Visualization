@@ -2,14 +2,14 @@
 title: "Become a Data Visualization Ninja"
 subtitle: "⚔<br/>What the resident needs to know"
 author: "Anton S. Becker, M.D., Ph.D."
-institute: "Director of Analytics, Body Service, Department of Radiology"
-date: "2023-01-27 (updated: `r Sys.Date()`)"
+institute: "Oncologic Imaging Division, Department of Radiology"
+date: "2023-12-25 (updated: `r Sys.Date()`)"
 output:
   xaringan::moon_reader:
     lib_dir: libs
     css: 
-      - msk.css
-      - msk-fonts.css
+      - nyu.css
+      - nyu-fonts.css
       - cols.css
       - magic.css
     includes:
@@ -1209,7 +1209,7 @@ class: center, middle
 
 ## Thank you for your attention
 
-[`r twitter`Anton Becker](https://twitter.com/dr_becker) / [beckera1@mskcc.org](mailto:beckera1@mskcc.org)
+[`r twitter`Anton Becker](https://twitter.com/dr_becker) / [Anton.Becker@nyulangone.org](mailto:Anton.Becker@nyulangone.org)
 
 Slides created via the R package [**xaringan**](https://github.com/yihui/xaringan) by [`r twitter`Yihui Xie](https://twitter.com/xieyihui).
 

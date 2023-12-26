@@ -5,13 +5,12 @@
 ### What the academic fellow or resident needs to know
 
 [slides]: https://asbecker.github.io/Scientific-Data-Visualization/
-[mskcc]: https://www.mskcc.org/hcp-education-training/fellowships/oncologic-imaging-fellowship
-[wcmc]: https://radiology.weill.cornell.edu/education/residencies/diagnostic-radiology-and-integrated-irdr/resident-profiles
+[nyu]: https://www.mskcc.org/hcp-education-training/fellowships/oncologic-imaging-fellowship
 [colors]: https://colorbrewer2.org/
 
 Anton Becker, M.D., Ph.D.
 
-This is a lecture for [MSKCC][mskcc] radiology fellows and [WCMC][wcmc] residents.
+Lecture for [NYU][nyu] radiology residents.
 
 &#x1F4FA; [View slides][slides] (best viewed in Firefox or Chrome)
 
