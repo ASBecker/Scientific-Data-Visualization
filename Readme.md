@@ -5,7 +5,7 @@
 ### What the academic fellow or resident needs to know
 
 [slides]: https://asbecker.github.io/Scientific-Data-Visualization/
-[nyu]: https://www.mskcc.org/hcp-education-training/fellowships/oncologic-imaging-fellowship
+[nyu]: https://med.nyu.edu/departments-institutes/radiology/education/residencies
 [colors]: https://colorbrewer2.org/
 
 Anton Becker, M.D., Ph.D.
